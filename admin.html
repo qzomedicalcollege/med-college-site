@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Админ-панель</title>
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+  <div class="login-page" data-login-screen>
+    <div class="login-card">
+      <h1>Вход в админ-панель</h1>
+      <p class="item-meta">Используйте email и пароль администратора из Firebase Authentication.</p>
+      <div data-configured-notice></div>
+      <div id="login-message"></div>
+      <form data-login-form>
+        <div class="form-row"><label>Email</label><input type="email" name="email" required placeholder="admin@college.kz"></div>
+        <div class="form-row"><label>Пароль</label><input type="password" name="password" required placeholder="••••••••"></div>
+        <button class="btn btn-primary" type="submit"><i class="fa-solid fa-right-to-bracket"></i> Войти</button>
+        <a class="btn btn-muted" href="index.html">На сайт</a>
+      </form>
+    </div>
+  </div>
+
+  <div class="admin-shell hidden" data-admin-screen>
+    <aside class="admin-sidebar">
+      <div class="admin-brand">
+        <img src="assets/img/logo.svg" alt="Логотип">
+        <div><strong>Админ-панель</strong><span data-user-email></span></div>
+      </div>
+      <nav class="admin-nav">
+        <button class="admin-tab active" data-tab="news"><i class="fa-solid fa-newspaper"></i> Новости</button>
+        <button class="admin-tab" data-tab="documents"><i class="fa-solid fa-file-lines"></i> Документы</button>
+        <button class="admin-tab" data-tab="pages"><i class="fa-solid fa-layer-group"></i> Страницы</button>
+        <button class="admin-tab" data-tab="quickLinks"><i class="fa-solid fa-table-cells-large"></i> Кармашки</button>
+        <button class="admin-tab" data-tab="specialties"><i class="fa-solid fa-stethoscope"></i> Специальности</button>
+        <button class="admin-tab" data-logout><i class="fa-solid fa-arrow-right-from-bracket"></i> Выйти</button>
+      </nav>
+    </aside>
+
+    <main class="admin-main">
+      <div class="admin-top">
+        <div><h1>Управление сайтом</h1><p class="item-meta">Добавляйте новости, документы, блоки страниц и кармашки главной страницы.</p></div>
+        <a class="btn btn-muted" href="index.html">Открыть сайт</a>
+      </div>
+      <div id="admin-message"></div>
+
+      <section class="admin-card" data-panel="news">
+        <h2>Новости</h2>
+        <form class="form-grid" data-news-form>
+          <div class="form-row"><label>Заголовок</label><input name="title" required></div>
+          <div class="form-row"><label>Статус</label><select name="status"><option value="published">Опубликовано</option><option value="draft">Черновик</option></select></div>
+          <div class="form-row full"><label>Текст</label><textarea name="content" required></textarea></div>
+          <div class="form-row"><label>Фото</label><input name="image" type="file" accept="image/*"></div>
+          <div class="form-row"><label>Файл PDF/Word/Excel/PPT</label><input name="file" type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx"></div>
+          <div class="form-row full"><button class="btn btn-primary" type="submit">Сохранить новость</button></div>
+        </form>
+        <div id="news-table"></div>
+      </section>
+
+      <section class="admin-card hidden" data-panel="documents">
+        <h2>Документы</h2>
+        <form class="form-grid" data-document-form>
+          <div class="form-row"><label>Название</label><input name="title" required></div>
+          <div class="form-row"><label>Категория</label><input name="category" required placeholder="Лицензии / Расписание / Бланки"></div>
+          <div class="form-row full"><label>Описание</label><textarea name="description"></textarea></div>
+          <div class="form-row full"><label>Файл</label><input name="file" type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx" required></div>
+          <div class="form-row full"><button class="btn btn-primary" type="submit">Загрузить документ</button></div>
+        </form>
+        <div id="documents-table"></div>
+      </section>
+
+      <section class="admin-card hidden" data-panel="pages">
+        <h2>Блоки страниц</h2>
+        <form class="form-grid" data-page-form>
+          <div class="form-row"><label>Страница</label><select name="page"><option value="about">О колледже</option><option value="admission">Абитуриентам</option><option value="students">Студентам</option><option value="schedule">Расписание</option><option value="contacts">Контакты</option></select></div>
+          <div class="form-row"><label>Заголовок</label><input name="title" required></div>
+          <div class="form-row full"><label>Текст</label><textarea name="text" required></textarea></div>
+          <div class="form-row"><label>Фото</label><input name="image" type="file" accept="image/*"></div>
+          <div class="form-row"><label>Файл</label><input name="file" type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx"></div>
+          <div class="form-row full"><button class="btn btn-primary" type="submit">Добавить блок</button></div>
+        </form>
+      </section>
+
+      <section class="admin-card hidden" data-panel="quickLinks">
+        <h2>Кармашки главной страницы</h2>
+        <form class="form-grid" data-quick-form>
+          <div class="form-row"><label>Название</label><input name="title" required></div>
+          <div class="form-row"><label>Ссылка</label><input name="link" required placeholder="admission.html"></div>
+          <div class="form-row"><label>Иконка Font Awesome</label><input name="icon" placeholder="fa-user-graduate"></div>
+          <div class="form-row"><label>Порядок</label><input name="order" type="number" value="1"></div>
+          <div class="form-row full"><label>Описание</label><textarea name="description" required></textarea></div>
+          <div class="form-row full"><button class="btn btn-primary" type="submit">Сохранить кармашек</button></div>
+        </form>
+        <div id="quick-table"></div>
+      </section>
+
+      <section class="admin-card hidden" data-panel="specialties">
+        <h2>Специальности</h2>
+        <form class="form-grid" data-specialty-form>
+          <div class="form-row"><label>Название</label><input name="title" required></div>
+          <div class="form-row"><label>Срок обучения</label><input name="duration" placeholder="2 г. 10 мес."></div>
+          <div class="form-row"><label>Иконка</label><input name="icon" placeholder="fa-user-nurse"></div>
+          <div class="form-row full"><label>Описание</label><textarea name="description" required></textarea></div>
+          <div class="form-row full"><button class="btn btn-primary" type="submit">Сохранить специальность</button></div>
+        </form>
+        <div id="specialties-table"></div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module">import { initAdmin } from './assets/js/admin.js'; initAdmin();</script>
+</body>
+</html>
