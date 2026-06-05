@@ -48,7 +48,6 @@ function getTopbar() {
       </div>
       <div class="topbar-list">
         <a href="${siteConfig.instagram}" target="_blank" rel="noopener">Instagram</a>
-        <a href="admin.html">Admin</a>
         <div class="langs"><button class="lang-btn active">RU</button><button class="lang-btn">KZ</button><button class="lang-btn">EN</button></div>
       </div>
     </div>`;
@@ -101,7 +100,7 @@ function getFooter() {
         <p>${siteConfig.accreditation}</p>
       </div>
       <div><h4>Разделы</h4><a href="about.html">О колледже</a><a href="admission.html">Абитуриентам</a><a href="students.html">Студентам</a><a href="documents.html">Документы</a></div>
-      <div><h4>Быстрый доступ</h4><a href="schedule.html">Расписание</a><a href="specialties.html">Специальности</a><a href="news.html">Новости</a><a href="admin.html">Админ-панель</a></div>
+      <div><h4>Быстрый доступ</h4><a href="schedule.html">Расписание</a><a href="specialties.html">Специальности</a><a href="news.html">Новости</a><a href="contacts.html">Контакты</a></div>
       <div><h4>Контакты</h4><a href="tel:${siteConfig.phone}">${siteConfig.phone}</a><a href="mailto:${siteConfig.email}">${siteConfig.email}</a><a href="${siteConfig.instagram}" target="_blank" rel="noopener">Instagram</a></div>
     </div>
     <div class="container footer-bottom">© 2026 ${siteConfig.nameKz}. Все права защищены.</div>`;
