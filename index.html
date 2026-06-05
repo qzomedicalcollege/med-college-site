@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кызылординский высший медицинский колледж</title>
+  <meta name="description" content="Официальный сайт Кызылординского высшего медицинского колледжа">
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="topbar" data-topbar></div>
+  <header class="site-header" data-header></header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow"><i class="fa-solid fa-shield-heart"></i> Медицинское образование с 1928 года</span>
+          <h1>Қызылорда жоғары медициналық колледжі</h1>
+          <p>Современный сайт колледжа с новостями, документами, расписанием, разделом для абитуриентов и админ-панелью для управления контентом.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="admission.html"><i class="fa-solid fa-user-graduate"></i> Абитуриентам</a>
+            <a class="btn btn-secondary" href="documents.html"><i class="fa-solid fa-file-arrow-down"></i> Документы</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h3>Быстрый доступ</h3>
+          <ul>
+            <li><i class="fa-solid fa-check"></i> Новости и объявления колледжа</li>
+            <li><i class="fa-solid fa-check"></i> PDF, Word, Excel и PowerPoint документы</li>
+            <li><i class="fa-solid fa-check"></i> Расписание занятий и материалы студентам</li>
+            <li><i class="fa-solid fa-check"></i> Отдельная админ-панель через Firebase</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div data-config-notice></div>
+        <div class="stats" data-stats></div>
+      </div>
+    </section>
+
+    <section class="section white">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Быстрый доступ</h2>
+            <p class="section-subtitle">Кармашки для основных разделов сайта.</p>
+          </div>
+        </div>
+        <div class="quick-grid" data-quick-links></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Специальности</h2>
+            <p class="section-subtitle">Основные образовательные программы колледжа.</p>
+          </div>
+          <a class="btn btn-secondary" href="specialties.html">Все специальности</a>
+        </div>
+        <div class="card-grid" data-specialties></div>
+      </div>
+    </section>
+
+    <section class="section white">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Последние новости</h2>
+            <p class="section-subtitle">Актуальные объявления и события колледжа.</p>
+          </div>
+          <a class="btn btn-secondary" href="news.html">Все новости</a>
+        </div>
+        <div class="news-grid" data-latest-news></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" data-footer></footer>
+  <script type="module">
+    import { renderHome } from './assets/js/site.js';
+    renderHome();
+  </script>
+</body>
+</html>
