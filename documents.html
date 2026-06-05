@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Документы</title>
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="topbar" data-topbar></div><header class="site-header" data-header></header>
+<main>
+  <section class="page-hero"><div class="container"><div class="breadcrumbs">Главная / Документы</div><h1>Документы</h1><p>PDF, Word, Excel и PowerPoint файлы для скачивания.</p></div></section>
+  <section class="section"><div class="container"><div class="filters"><input class="filter-input" data-doc-search placeholder="Поиск документа"><select class="filter-select" data-doc-category></select></div><div class="doc-grid" data-documents></div></div></section>
+</main>
+<footer class="footer" data-footer></footer>
+<script type="module">import { renderDocuments } from './assets/js/documents.js'; renderDocuments();</script>
+</body>
+</html>
